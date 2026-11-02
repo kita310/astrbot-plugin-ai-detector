@@ -1,0 +1,7 @@
+name: astrbot_plugin_kafu_aidetect
+display_name: AI 内容鉴别
+desc: 引用消息 + @机器人 + "是ai吗"，用腾讯朱雀鉴别文字、Sightengine 鉴别图片是否 AI 生成，由机器人按人设回复。
+version: 0.1.0
+author: kita
+repo: ""
+astrbot_version: ">=4.27,<5"

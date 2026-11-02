@@ -1,0 +1,78 @@
+{
+  "enable": {
+    "type": "bool",
+    "default": true,
+    "description": "启用 AI 鉴别"
+  },
+  "zhuque_api_key": {
+    "type": "string",
+    "default": "",
+    "description": "腾讯 EdgeOne Makers 的 API Key（朱雀文字检测）",
+    "hint": "控制台 Makers → Models → API Key。每月 50 万 token 免费额度。",
+    "obvious_hint": true
+  },
+  "sightengine_api_user": {
+    "type": "string",
+    "default": "",
+    "description": "Sightengine api_user（图片检测）",
+    "hint": "sightengine.com 注册后在 Dashboard 里看。免费档每月 2000 operations、每天最多 500。"
+  },
+  "sightengine_api_secret": {
+    "type": "string",
+    "default": "",
+    "description": "Sightengine api_secret（图片检测）"
+  },
+  "image_use_proxy": {
+    "type": "bool",
+    "default": false,
+    "description": "图片检测走容器代理",
+    "hint": "直连 Sightengine 失败时再打开"
+  },
+  "bare_trigger": {
+    "type": "bool",
+    "default": true,
+    "description": "群里不 @ 也能用",
+    "hint": "只认整条消息就是“是ai吗”这类短句，且最近确实有可鉴别的消息"
+  },
+  "cooldown_seconds": {
+    "type": "int",
+    "default": 20,
+    "description": "同一人两次鉴别的间隔（秒）"
+  },
+  "daily_text_limit": {
+    "type": "int",
+    "default": 200,
+    "description": "全局每天文字鉴别次数上限"
+  },
+  "daily_image_limit": {
+    "type": "int",
+    "default": 13,
+    "description": "全局每天图片鉴别次数上限",
+    "hint": "Sightengine 每张图扣 5 operations；免费档每月 2000，13 张/天约 390 张/月"
+  },
+  "max_images": {
+    "type": "int",
+    "default": 2,
+    "description": "一次最多鉴别几张图"
+  },
+  "min_text_chars": {
+    "type": "int",
+    "default": 10,
+    "description": "少于这么多字不调用接口"
+  },
+  "short_text_chars": {
+    "type": "int",
+    "default": 50,
+    "description": "少于这么多字会提醒“短文本容易误判”"
+  },
+  "recent_size": {
+    "type": "int",
+    "default": 15,
+    "description": "每个群在内存里记住最近多少条消息（不落盘，30 分钟后作废）"
+  },
+  "allow_groups": {
+    "type": "list",
+    "default": [],
+    "description": "只在这些群启用（留空 = 全部）"
+  }
+}
